@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Product(models.Model):
     name = models.CharField(max_length=100)
     cost = models.FloatField()
@@ -7,8 +8,8 @@ class Product(models.Model):
 
     class Meta:
         constraints = [
-            models.UniqueConstraint(fields=['name', 'cost'], name='unique_product')
+            models.UniqueConstraint(fields=["name", "cost"], name="unique_product")
         ]
 
     def __str__(self):
-        return f'{self.name} - {self.in_stock}'
+        return f"{self.name} - {self.in_stock}"
